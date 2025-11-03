@@ -1,27 +1,32 @@
 import React, { useEffect, useState } from "react";
 import Breadcrumb from "../components/Breadcrumb";
+import Product_Card from "../components/Product_Card";
 
 const Categories = () => {
   const [categories, setCategories] = useState([]);
+  const [products, setProducts] = useState([]);
+  const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // Fetch products from API
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => {
-        // Extract unique categories
-        const uniqueCategories = [
-          ...new Set(data.products.map((prod) => prod.category)),
-        ];
+        const uniqueCategories = Array.from(
+          new Set(data.products.map((prod) => prod.category))
+        );
 
-        // Map to objects with a sample image
         const categoriesWithImages = uniqueCategories.map((cat) => ({
-          name: cat,
-          image: `https://source.unsplash.com/400x400/?${cat.replace("&", "")}`,
+          name: cat.charAt(0).toUpperCase() + cat.slice(1),
+          value: cat,
+          image: `https://source.unsplash.com/400x400/?${encodeURIComponent(
+            cat
+          )}`,
         }));
 
         setCategories(categoriesWithImages);
+        setProducts(data.products);
+        setSelectedCategory(uniqueCategories[0]); // প্রথম category selected
         setLoading(false);
       })
       .catch((err) => {
@@ -30,10 +35,14 @@ const Categories = () => {
       });
   }, []);
 
+  // Selected category এর products
+  const filteredProducts = products.filter(
+    (p) => p.category === selectedCategory
+  );
+
   return (
     <>
       <Breadcrumb />
-
       <div className="bg-gray-50 min-h-screen py-20 px-6 md:px-12">
         <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
           Shop by Categories
@@ -42,26 +51,40 @@ const Categories = () => {
         {loading ? (
           <p className="text-center text-gray-500">Loading categories...</p>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-            {categories.map((cat, index) => (
-              <div
-                key={index}
-                className="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-xl transition cursor-pointer group"
-              >
-                <div className="relative h-48">
+          <div className="flex flex-col md:flex-row gap-6">
+            {/* Left Sidebar - Categories */}
+            <div className="md:w-1/4 flex flex-col gap-4">
+              {categories.map((cat, index) => (
+                <button
+                  key={index}
+                  onClick={() => setSelectedCategory(cat.value)}
+                  className={`flex items-center gap-3 p-3 rounded-xl shadow-md transition hover:shadow-lg focus:outline-none ${
+                    selectedCategory === cat.value
+                      ? "bg-gray-800 text-white"
+                      : "bg-white text-gray-800"
+                  }`}
+                >
                   <img
                     src={cat.image}
                     alt={cat.name}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                    className="w-12 h-12 object-cover rounded-md"
                   />
-                </div>
-                <div className="p-4 text-center">
-                  <h3 className="text-lg font-semibold text-gray-800">
-                    {cat.name}
-                  </h3>
-                </div>
-              </div>
-            ))}
+                  <span className="font-semibold">{cat.name}</span>
+                </button>
+              ))}
+            </div>
+
+            {/* Right Content - Products */}
+            <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+              {filteredProducts.map((product) => (
+                <Product_Card key={product.id} product={product} />
+              ))}
+              {filteredProducts.length === 0 && (
+                <p className="text-gray-500 col-span-full text-center">
+                  No products found in this category.
+                </p>
+              )}
+            </div>
           </div>
         )}
       </div>
