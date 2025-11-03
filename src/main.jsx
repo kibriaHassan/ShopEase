@@ -11,14 +11,15 @@ import Contact from "./pages/Contact.jsx";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <RoutesLayout />, // layout wrapper
-    children: [
+      path: "/",
+      element: <RoutesLayout />, // layout wrapper
+      children: [
       { index: true, element: <App /> },
       { path: "categories", element: <Categories /> },
       { path: "shop", element: <Shop /> },
       { path: "pricing", element: <Pricing /> },
       { path: "contact", element: <Contact /> },
+      //  {path:"/product/:id", element:<Product_Details /> },
     ],
   },
 ]);

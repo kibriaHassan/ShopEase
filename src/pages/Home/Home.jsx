@@ -1,8 +1,12 @@
 import React from "react";
+import Product_Details from "../../components/Product_Details";
 
 const Home = () => {
   return (
     <div className="relative bg-white text-gray-800">
+
+
+      {/* <Product_Details/> */}
       {/* Hero Section */}
       <section className="bg-gray-100 text-gray-800">
         <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col md:flex-row items-center justify-between">
