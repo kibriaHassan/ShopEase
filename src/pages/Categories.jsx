@@ -1,4 +1,5 @@
 import React from "react";
+import Breadcrumb from "../components/Breadcrumb";
 
 const categories = [
   { name: "Electronics", image: "https://source.unsplash.com/400x400/?electronics" },
@@ -13,6 +14,9 @@ const categories = [
 
 const Categories = () => {
   return (
+
+    <>
+    <Breadcrumb/>
     <div className="bg-gray-50 min-h-screen py-20 px-6 md:px-12">
       <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
         Shop by Categories
@@ -38,6 +42,8 @@ const Categories = () => {
         ))}
       </div>
     </div>
+
+     </>
   );
 };
 
