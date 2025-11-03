@@ -5,6 +5,7 @@ import './App.css'
 import Navbar from './layouts/Navbar/Navbar'
 import Home from './pages/Home/Home'
 import Product_Card from './components/Product_Card'
+import Breadcrumb from './components/Breadcrumb'
 
 function App() {
   
@@ -14,6 +15,7 @@ function App() {
    
      {/* <Home/> */}
      <Product_Card/>
+     <Breadcrumb/>
     </>
   )
 }
