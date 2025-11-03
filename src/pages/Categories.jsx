@@ -26,7 +26,7 @@ const Categories = () => {
 
         setCategories(categoriesWithImages);
         setProducts(data.products);
-        setSelectedCategory(uniqueCategories[0]); // প্রথম category selected
+        setSelectedCategory(uniqueCategories[0]);
         setLoading(false);
       })
       .catch((err) => {
@@ -35,7 +35,6 @@ const Categories = () => {
       });
   }, []);
 
-  // Selected category এর products
   const filteredProducts = products.filter(
     (p) => p.category === selectedCategory
   );
@@ -43,44 +42,40 @@ const Categories = () => {
   return (
     <>
       <Breadcrumb />
-      <div className="bg-gray-50 min-h-screen py-20 px-6 md:px-12">
-        <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
-          Shop by Categories
-        </h1>
-
+      <div className="bg-gray-50 min-h-screen py-10 px-6 md:px-12">
+        
         {loading ? (
           <p className="text-center text-gray-500">Loading categories...</p>
         ) : (
           <div className="flex flex-col md:flex-row gap-6">
-            {/* Left Sidebar - Categories */}
-            <div className="md:w-1/4 flex flex-col gap-4">
+            {/* Left Sidebar */}
+            <div className="md:w-64 flex-shrink-0 flex flex-col gap-4 h-[70vh] overflow-y-auto">
               {categories.map((cat, index) => (
                 <button
                   key={index}
                   onClick={() => setSelectedCategory(cat.value)}
-                  className={`flex items-center gap-3 p-3 rounded-xl shadow-md transition hover:shadow-lg focus:outline-none ${
+                  className={`flex items-center gap-3 p-3 rounded-xl shadow-md transition hover:shadow-lg focus:outline-none w-full text-left ${
                     selectedCategory === cat.value
                       ? "bg-gray-800 text-white"
                       : "bg-white text-gray-800"
                   }`}
                 >
-                  <img
-                    src={cat.image}
-                    alt={cat.name}
-                    className="w-12 h-12 object-cover rounded-md"
-                  />
+                
                   <span className="font-semibold">{cat.name}</span>
                 </button>
               ))}
             </div>
 
             {/* Right Content - Products */}
-            <div className="md:w-3/4 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {filteredProducts.map((product) => (
-                <Product_Card key={product.id} product={product} />
-              ))}
-              {filteredProducts.length === 0 && (
-                <p className="text-gray-500 col-span-full text-center">
+            <div className="flex-1 h-[70vh] overflow-y-auto">
+              {filteredProducts.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  {filteredProducts.map((product) => (
+                    <Product_Card key={product.id} product={product} />
+                  ))}
+                </div>
+              ) : (
+                <p className="text-gray-500 text-center mt-10">
                   No products found in this category.
                 </p>
               )}
