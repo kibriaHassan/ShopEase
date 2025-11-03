@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import Navbar from './layouts/Navbar/Navbar'
 import Home from './pages/Home/Home'
+import Product_Card from './components/Product_Card'
 
 function App() {
   
@@ -11,7 +12,8 @@ function App() {
   return (
     <>
    
-     <Home/>
+     {/* <Home/> */}
+     <Product_Card/>
     </>
   )
 }
