@@ -4,10 +4,6 @@ const Product_Card = ({ product }) => {
   return (
 
     <>
-    
-    
-    
-    
    <div className="flex flex-col md:flex-row bg-white shadow-md max-md:max-w-80">
                 <img className='w-80 md:w-64 h-80 object-cover object-top'
                     src="https://images.unsplash.com/photo-1598554747436-c9293d6a588f?q=80&w=500&auto=format&fit=crop"

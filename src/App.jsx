@@ -13,9 +13,9 @@ function App() {
   return (
     <>
    
-     {/* <Home/> */}
-     <Product_Card/>
-     <Breadcrumb/>
+     <Home/>
+     {/* <Product_Card/>
+     <Breadcrumb/> */}
     </>
   )
 }
