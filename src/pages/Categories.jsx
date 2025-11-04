@@ -53,7 +53,7 @@ const Categories = () => {
                   onClick={() => setSelectedCategory(cat.value)}
                   className={`flex items-center gap-3 p-3 rounded-xl shadow-md transition hover:shadow-lg focus:outline-none w-full text-left ${
                     selectedCategory === cat.value
-                      ? "bg-gray-800 text-white"
+                      ? "bg-[#F58B27] text-white"
                       : "bg-white text-gray-800"
                   }`}
                 >
