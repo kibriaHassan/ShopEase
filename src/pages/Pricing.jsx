@@ -18,18 +18,10 @@ const plans = [
     features: ["Everything in Standard", "Exclusive offers", "Personalized recommendations"],
   },
 ];
-
 const Pricing = () => {
   return (
-
-
     <>
-    
-    
     <Breadcrumb/>
-    
-
-
     <div className="bg-gray-50 min-h-screen py-20 px-6 md:px-12">
       <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
         Pricing Plans
@@ -62,8 +54,6 @@ const Pricing = () => {
         ))}
       </div>
     </div>
-
-
     </>
   );
 };

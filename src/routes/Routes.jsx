@@ -12,9 +12,6 @@ const Routes = () => {
     <Outlet/>
     </main>
     <Footer/>
-    
-    
-    
     </>
   )
 }

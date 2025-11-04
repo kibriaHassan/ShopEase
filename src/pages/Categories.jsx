@@ -38,17 +38,14 @@ const Categories = () => {
   const filteredProducts = products.filter(
     (p) => p.category === selectedCategory
   );
-
   return (
     <>
       <Breadcrumb />
       <div className="bg-gray-50 min-h-screen py-10 px-6 md:px-12">
-        
         {loading ? (
           <p className="text-center text-gray-500">Loading categories...</p>
         ) : (
           <div className="flex flex-col md:flex-row gap-6">
-            {/* Left Sidebar */}
             <div className="md:w-64 flex-shrink-0 flex flex-col gap-4 h-[70vh] overflow-y-auto">
               {categories.map((cat, index) => (
                 <button
@@ -60,13 +57,10 @@ const Categories = () => {
                       : "bg-white text-gray-800"
                   }`}
                 >
-                
                   <span className="font-semibold">{cat.name}</span>
                 </button>
               ))}
             </div>
-
-            {/* Right Content - Products */}
             <div className="flex-1 h-[70vh] overflow-y-auto">
               {filteredProducts.length > 0 ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

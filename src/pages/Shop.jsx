@@ -7,11 +7,10 @@ const Shop = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // API থেকে প্রোডাক্ট ফেচ করা
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
       .then((data) => {
-        setProducts(data.products); // API রেসপন্সে products আছে
+        setProducts(data.products); 
         setLoading(false);
       })
       .catch((err) => {
@@ -25,10 +24,6 @@ const Shop = () => {
       <Breadcrumb />
 
       <div className="bg-gray-50 min-h-screen py-20 px-6 md:px-12">
-        <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
-          Shop All Products
-        </h1>
-
         {loading ? (
           <p className="text-center text-gray-500">Loading products...</p>
         ) : (
