@@ -5,7 +5,6 @@ import Product_Card from "../components/Product_Card";
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())

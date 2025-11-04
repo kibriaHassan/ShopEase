@@ -20,7 +20,6 @@ const Product_Details = () => {
             "Available in different sizes"
         ]
     };
-
     const [thumbnail, setThumbnail] = React.useState(product.images[0]);
 
     return product && (
