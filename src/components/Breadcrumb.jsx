@@ -19,7 +19,7 @@ const Breadcrumb = () => {
                 <path d="M11.527 1 1.13 18.429" stroke="#6B7280" strokeOpacity=".8" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>
             <p>{PathnameLocation}</p>
-        </div>
+     </div>
     </>
   )
 }
