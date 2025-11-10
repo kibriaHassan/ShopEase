@@ -7,7 +7,6 @@ const Categories = () => {
   const [products, setProducts] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
-
   useEffect(() => {
     fetch("https://dummyjson.com/products")
       .then((res) => res.json())
@@ -15,7 +14,6 @@ const Categories = () => {
         const uniqueCategories = Array.from(
           new Set(data.products.map((prod) => prod.category))
         );
-
         const categoriesWithImages = uniqueCategories.map((cat) => ({
           name: cat.charAt(0).toUpperCase() + cat.slice(1),
           value: cat,
@@ -23,7 +21,6 @@ const Categories = () => {
             cat
           )}`,
         }));
-
         setCategories(categoriesWithImages);
         setProducts(data.products);
         setSelectedCategory(uniqueCategories[0]);

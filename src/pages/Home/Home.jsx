@@ -4,7 +4,7 @@ import Product_Details from "../../components/Product_Details";
 const Home = () => {
   return (
     <div className="relative bg-white text-gray-800">
-      {/* 🌟 Hero Section */}
+      
       <section className="relative bg-gray-900 text-white">
         <img
           src="https://images.unsplash.com/photo-1616628181658-cf8bbfe3c3e5?auto=format&fit=crop&w=1600&q=80"
@@ -32,8 +32,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* 🛍️ Featured Products */}
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-20">
         <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
           Featured Products
@@ -63,8 +61,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-      {/* 📦 Category Highlights */}
       <section id="categories" className="bg-gray-100 py-20 px-6 md:px-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
           Explore Popular Categories
@@ -89,8 +85,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-      {/* 💬 Testimonials */}
       <section className="bg-white py-20 px-6 md:px-12 border-t border-gray-200">
         <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
           What Our Customers Say ❤️
@@ -115,7 +109,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* 📰 Blog Section */}
       <section className="bg-gray-100 py-20 px-6 md:px-12">
         <h2 className="text-3xl font-bold text-gray-800 mb-10 text-center">
           Latest from Our Blog 📰
@@ -145,8 +138,6 @@ const Home = () => {
           ))}
         </div>
       </section>
-
-      {/* ✉️ Newsletter */}
       <section className="bg-gray-900 py-20 text-white text-center">
         <h2 className="text-3xl font-bold mb-4">Join Our Community</h2>
         <p className="mb-6 text-gray-300">
@@ -163,8 +154,6 @@ const Home = () => {
           </button>
         </form>
       </section>
-
-      {/* ⚡ Footer CTA */}
       <footer className="bg-gray-800 text-gray-300 py-8 text-center">
         <p>© {new Date().getFullYear()} ShopSmart. All rights reserved.</p>
       </footer>

@@ -4,6 +4,7 @@ const Product_Card = ({ product }) => {
   return (
     <div className="flex flex-col bg-white shadow-md rounded-xl overflow-hidden hover:shadow-xl transition cursor-pointer group">
       <div className="relative h-64">
+        
         <img
           src={product.thumbnail || product.image}
           alt={product.title || product.name}

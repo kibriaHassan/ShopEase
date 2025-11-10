@@ -17,11 +17,9 @@ const Shop = () => {
         setLoading(false);
       });
   }, []);
-
   return (
     <>
       <Breadcrumb />
-
       <div className="bg-gray-50 min-h-screen py-20 px-6 md:px-12">
         {loading ? (
           <p className="text-center text-gray-500">Loading products...</p>

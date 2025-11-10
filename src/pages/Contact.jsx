@@ -10,9 +10,7 @@ const Contact = () => {
       <h1 className="text-4xl font-bold text-gray-800 text-center mb-12">
         Contact Us
       </h1>
-
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-6xl mx-auto">
-        
         <div className="bg-white rounded-xl shadow-md p-8">
           <h2 className="text-2xl font-semibold text-gray-700 mb-6">
             Get in Touch
@@ -28,7 +26,6 @@ const Contact = () => {
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-violet-500 outline-none"
               />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 Your Email
@@ -39,7 +36,6 @@ const Contact = () => {
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-violet-500 outline-none"
               />
             </div>
-
             <div>
               <label className="block text-sm font-medium text-gray-600 mb-2">
                 Message
@@ -50,7 +46,6 @@ const Contact = () => {
                 className="w-full border border-gray-300 rounded-lg px-4 py-2 focus:ring-2 focus:ring-violet-500 outline-none"
               ></textarea>
             </div>
-
             <button
               type="submit"
               className="w-full bg-violet-500 text-white font-medium py-3 rounded-lg hover:bg-violet-600 transition"
@@ -59,8 +54,6 @@ const Contact = () => {
             </button>
           </form>
         </div>
-
-        
         <div className="flex flex-col justify-center bg-violet-50 rounded-xl p-8">
           <h2 className="text-2xl font-semibold text-gray-700 mb-6">
             Our Store
@@ -70,7 +63,6 @@ const Contact = () => {
           </p>
           <p className="text-gray-600 mb-4">📞 +880 1234 567890</p>
           <p className="text-gray-600 mb-8">✉️ support@ecommerce.com</p>
-
           <div className="w-full h-64 bg-gray-200 rounded-lg flex items-center justify-center text-gray-500 text-sm">
             [ Google Map Placeholder ]
           </div>
